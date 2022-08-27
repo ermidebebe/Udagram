@@ -43,7 +43,7 @@ import { filterImageFromURL, deleteLocalFiles } from "./util/util";
       // delete files from the server
       res.on("finish", () => deleteLocalFiles([filtered_image_path]));
     } catch (error) {
-      res.status(422).send("unable to process");
+      res.status(500).send("unable to process");
     }
   });
   // Root Endpoint
